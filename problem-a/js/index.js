@@ -40,22 +40,28 @@ console.log(ratio.toFixed(2) + '%');
 //Create an array `numbers` that contains these 10 numbers:
 //    1 4 1 5 9 2 6 5 3 5
 //Log out the array.
-
+const arr = [1,4,1,5,9,2,6,5,3,5];
+console.log(arr);
 
 //Use bracket notation to change the `4` in the array to a `4.2`.
 //Log out the updated array.
-
+arr[1] = 4.2;
+console.log(arr);
 
 //Add the number 3 to the END of the array.
 //Log out the updated array.
-
+arr.push(3);
+// arr[arr.length] = 3;
+console.log(arr);
 
 //Find the median (middle) value of the numbers in the array.
 //Hint: sort() the array, then access the middle index of the sorted values.
 //You can use the `Math.floor()` function to round to a whole number.
 //Log out the median value.
-
-
+let sortedArr = arr.sort();
+const medianValue = sortedArr[Math.floor(sortedArr.length / 2)];
+// console.log(sortedArr);
+console.log(medianValue);
 
 /** Objects **/
 
@@ -63,19 +69,28 @@ console.log(ratio.toFixed(2) + '%');
 //with properties:
 //  `x` (coordinate) of 30, `y` of 50, `width` of 100, `height` of 50
 //Log out the rectangle object
+let rect = new Object({
+    x: 30,
+    y: 50,
+    width: 100,
+    height: 50
+});
 
+console.log(rect);
 
 //Log out the x- and y- coordinates of the rectangle (its location). Your output 
 //should have the format `"X, Y"`.
+console.log(rect.x + ", " + rect.y);
 
 
 //Set the rectangle's height to be the square root of its width. (Use the 
 //`Math.sqrt()` function).
 //Use *dot notation* to access the properties!
+rect.height = Math.sqrt(rect.width);
 
 
 //Log out the rectangle's area. Use *dot notation* to access the properties!
-
+console.log(rect.width * rect.height);
 
 //Create a variable `circle` that represents a circle. This should be an object
 //with properties:
@@ -83,25 +98,38 @@ console.log(ratio.toFixed(2) + '%');
 //  `cy` of 43,
 //  `radius` equal to the LAST value in the (sorted) `numbers` array.
 //Log out the circle
+let circle = {
+    cx: 34,
+    cy: 43,
+    radius: arr[arr.length - 1]
+};
 
+console.log(circle);
 
 //Create an array `shapes` that represents a list of shapes. The array should
 //contain the rectangle and the circle objects defined above.
 //Log out the variable. Be sure to inspect it in the developer console!
-
+let shapes = [rect, circle];
+console.log(shapes);
 
 //Add a new ANONYMOUS object (e.g., one passed in directly without its own
 //variable name) representing a right triangle to the `shapes` array.
 //The triangle should have a `base` of 33 and a `height` of 44.
 //Log out the updated shapes array.
+shapes.push({
+    base: 33,
+    height: 44
+});
 
+console.log(shapes);
 
 //Log out the triangle's `hypotenuse` property (don't calculate it, just log out
 //the current property value!). What do you get?
-
+console.log(shapes[2].hypotenuse);
 
 //Assign the triangle inside the `shapes` array a 'hypotenuse' property of `55`.
 //Log out the `shapes` array again.
 //Visually check: what happens if you inspect the previously logged array in the 
 //Chrome developer console?
-
+shapes[2].hypotenuse = 55;
+console.log(shapes);
