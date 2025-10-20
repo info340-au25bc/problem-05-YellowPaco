@@ -77,7 +77,20 @@ console.log(fizzBuzz(20));
    each letter, increase the value associated with that key by one. Watch out 
    for if the letter is not in the Object yet!
    You can test this method with a word like "Mississippi". */
+function getLetterFrequencies(str) {
+  let frequencies = {};
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (frequencies[char]) {
+      frequencies[char]++;
+    } else {
+      frequencies[char] = 1;
+    }
+  }
+  return frequencies;
+}
 
+console.log(getLetterFrequencies("Mississippi"));
    
 
 /* Create a variable `deck` that represents a deck of modern playing cards
