@@ -104,28 +104,78 @@ console.log(getLetterFrequencies("Mississippi"));
     the `deck` array! 
     
     You can log out the `deck` to check your work! */
+let deck = [];
+const suits = ["hearts", "diamonds", "clubs", "spades"];
+const ranks = [2,3,4,5,6,7,8,9,10,11,12,13,14];
+for (const suit of suits) {
+  for (const rank of ranks) {
+    deck.push({suit: suit, rank: rank});
+  }
+}
+
+console.log(deck);
 
     
 
 //You can test the below functions by creating e.g., a `pokerHand` array that 
 //contains five cards from the `deck`.
+let pokerHand = [];
+for (let i = 0; i < 5; i++) {
+  const randomIndex = Math.round(Math.random() * deck.length);
+  pokerHand.push(deck[randomIndex]);
+}
+
+console.log(pokerHand);
+
 
 /* Define a function `containsQueenOfHearts()` that takes in an array of "card"
    objects (e.g., a Poker hand) and returns whether or not the Queen of Hearts
    is in that array.
    Hint: use a loop to check each card. */
+function containsQueenOfHearts(cards) {
+  for (const card of cards) {
+    if (card.suit == "hearts" && card.rank == 12) {
+      return true;
+    }
+  }
+  return false;
+}
 
-   
+console.log(containsQueenOfHearts(pokerHand));
+
 
 /* Define a function `getHighCard()` that takes in an array of "card" objects
   and returns the card object with the highest value. The "high card" is the one
   with the highest rank. Cards of different suits but the same rank are 
   considered to have the same value, and either is a valid result */
+function getHighCard(cards) {
+  let highCard = cards[0];
+  for (let i = 1; i < cards.length; i++) {
+    if (cards[i].rank >= highCard.rank) {
+      highCard = cards[i];
+    }
+    i++;
+  }
+  return highCard;
+}
 
+console.log(getHighCard(pokerHand));
   
 
 /* Define a function `isFlush()` that takes in an array of "card" objects and
    returns whether or not the cards all have the same _suit_. */
+function isFlush(cards) {
+  if (cards.length == 0) return false;
+  const firstSuit = cards[0].suit;
+  for (let i = 1; i < cards.length; i++) {
+    if (cards[i].suit != firstSuit) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isFlush(pokerHand));
 
    
 
