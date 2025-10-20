@@ -46,8 +46,27 @@ console.log(compoundInterest(100, 0.04, 6));
    number. For numbers which are multiples of both three and five, the array 
    should contain "FizzBuzz" instead of the number.
    The returned array should be empty for arguments less than 1. */
-
+function fizzBuzz(num) {
+  let arr = [];
+  if (num < 1) {
+    return arr;
+  }
+  
+  for (let i = 1; i <= num; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+      arr.push("FizzBuzz");
+    } else if (i % 3 == 0) {
+      arr.push("Fizz");
+    } else if (i % 5 == 0) {
+      arr.push("Buzz");
+    } else {
+      arr.push(i);
+    }
+  }
+  return arr;
+}
    
+console.log(fizzBuzz(20));
 
 /* Define a function `getLetterFrequencies()` that takes in a single string as 
    an argument. The function should *return* an Object whose keys are characters
