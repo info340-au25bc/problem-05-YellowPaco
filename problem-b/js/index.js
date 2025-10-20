@@ -2,16 +2,22 @@
 
 /* Define a function `addFour()` that takes a single argument 
    and returns a value 4 greater than the input.*/
-
+function addFour(input) {
+  return input + 4;
+}
    
 /* Create and log a variable `twelve` that is the result of passing 8 to your
    addFour() function. */
+let twelve = addFour(8);
+console.log(twelve);
 
    
 /* Create and log a variable `twelveString` that is the result of passing "8" 
    (a string) to your addFour() function. Consider what this tells you about how
   the function should be explained (e.g., in a comment). */
-
+let twelveString = addFour("8");
+console.log(twelveString);
+// string type input lead to string concatenation whereas number type input lead to arthmetic.
   
 
 /* Define a function `compoundInterest()` that takes three parameters: 
@@ -25,7 +31,12 @@
    You can call the method and log the result to check your work. Compare to
      http://www.mathwarehouse.com/calculators/continuous-compound-interest-calculator.php
 */
+function compoundInterest(p, r, t) {
+  let total = p * Math.pow(Math.E, r * t);
+  return Math.round(total * 100) / 100;
+}
 
+console.log(compoundInterest(100, 0.04, 6));
 
 
 /* Define a function `fizzBuzz()` that takes in a single number as an argument.
