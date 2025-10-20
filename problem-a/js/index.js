@@ -3,32 +3,36 @@
 /** Basic Types */
 
 //Define a new variable `motto` for the value "The iSchool is my school"
-
+let motto = "The iSchool is my school";
 
 //Log out the motto
-
+console.log(motto);
 
 //Define a variable `mottoLength` that stores the length of the motto.
 //Use the `.length` property
 //Log out the length.
-
+let mottoLength = motto.length;
+console.log(mottoLength);
 
 //Use the `indexOf()` String method to see if the word "cool" is in the string.
 //See http://www.w3schools.com/jsref/jsref_obj_string.asp for String methods
 //Log out a _boolean_ whether it is or not.
-
+console.log(motto.indexOf("cool") != -1);
 
 //Use a String method to replace the word "iSchool" in the `motto` variable with
 //the words "Information School". The new value should be re-assigned to the
 //`motto` variable.
 //Log out the updated motto.
-
+motto = motto.replace("iSchool", "Information School");
+console.log(motto);
 
 //Calculate the ratio between the length of the updated motto and the length of 
 //the old (which you had saved in a variable!). Log out this ratio as a 
 //percentage with two decimal places of precision (e.g., `"123.45%"`).
 //You can use the `.toFixed()` Number method to specify the precision. 
-
+let updatedMottoLength = motto.length;
+const ratio = (updatedMottoLength / mottoLength) * 100;
+console.log(ratio.toFixed(2) + '%');
 
 
 /** Arrays **/
